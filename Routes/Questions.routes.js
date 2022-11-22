@@ -96,9 +96,9 @@ QuestionRoutes.post("/:id", Authorization(["admin"]), async (req, res) => {
             // Adding those 10 question to seperate Collection with Generated uuid
             { ...q, uuid: req.params.id }
         ))
+
         await LinkQuestionsModel.insertMany(LinkQuestions)
 
-        // const LinkQuestions = TenQuestion?.filter((r) => delete (r._id))
 
         // Random URL send to Home page
 
