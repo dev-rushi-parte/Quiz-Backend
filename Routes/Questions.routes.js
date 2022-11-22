@@ -95,15 +95,15 @@ QuestionRoutes.post("/:id", Authorization(["admin"]), async (req, res) => {
 
             // Adding those 10 question to seperate Collection with Generated uuid
             await LinkQuestionsModel.insertMany([{ ...q, uuid: req.params.id }])
-                .then((res) => {
-                    // Random URL send to Home page
 
-                    const fullURL = "https://quiz-frontend-eight.vercel.app/" + "quiz" + "/" + req.params.id;
-
-                    res.status(200).send({ "URL": fullURL })
-                })
         ))
+            .then(() => {
+                // Random URL send to Home page
 
+                const fullURL = "https://quiz-frontend-eight.vercel.app/" + "quiz" + "/" + req.params.id;
+
+                res.status(200).send({ "URL": fullURL })
+            })
 
 
     }
