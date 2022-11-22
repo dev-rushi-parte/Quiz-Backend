@@ -97,13 +97,13 @@ QuestionRoutes.post("/:id", Authorization(["admin"]), async (req, res) => {
             await LinkQuestionsModel.insertMany([{ ...q, uuid: req.params.id }])
 
         ))
-            .then(() => {
+      
                 // Random URL send to Home page
 
                 const fullURL = "https://quiz-frontend-eight.vercel.app/" + "quiz" + "/" + req.params.id;
 
                 res.status(200).send({ "URL": fullURL })
-            })
+            
 
 
     }
